@@ -1792,7 +1792,27 @@ class Reddcoin(Coin):
     TX_COUNT_HEIGHT = 1717382
     TX_PER_BLOCK = 3
     RPC_PORT = 45443
+    PEERS = [
+        "electrum01.reddcoin.com s",
+        "electrum02.reddcoin.com s",
+        "electrum03.reddcoin.com s"
 
+    ]
+
+class ReddcoinTestnet(Reddcoin):
+    NAME = "ReddcoinTestnet"
+    SHORTNAME = "tRDD"
+    NET = "testnet"
+    P2PKH_VERBYTE = bytes.fromhex("6f")
+    P2SH_VERBYTES = (bytes.fromhex("c4"),)
+    WIF_BYTE = bytes.fromhex("ef")
+    GENESIS_HASH = ('a12ac9bd4cd26262c53a6277aafc61fe'
+                    '9dfe1e2b05eaa1ca148a5be8b394e35a')
+    ESTIMATE_FEE = 0.001
+    RPC_PORT = 55443
+    PEERS = [
+        "electrum01-testnet.reddcoin.com s"
+    ]
 
 class TokenPay(ScryptMixin, Coin):
     NAME = "TokenPay"
